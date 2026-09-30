@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fecha_Inicio_No_Pasada</fullName>
+    <active>true</active>
+    <description>Impide crear o cambiar el inicio a una fecha pasada; permite actualizar el estado de solicitudes históricas.</description>
+    <errorConditionFormula>AND(
+    OR(ISNEW(), ISCHANGED(Fecha_Inicio__c)),
+    NOT(ISBLANK(Fecha_Inicio__c)),
+    Fecha_Inicio__c &lt; TODAY()
+)</errorConditionFormula>
+    <errorDisplayField>Fecha_Inicio__c</errorDisplayField>
+    <errorMessage>La fecha inicio no puede estar en el pasado.</errorMessage>
+</ValidationRule>

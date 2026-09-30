@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fecha_Fin_Valida</fullName>
+    <active>true</active>
+    <description>La fecha fin no puede quedar antes de la fecha inicio.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Fecha_Inicio__c)),
+    NOT(ISBLANK(Fecha_Fin__c)),
+    Fecha_Fin__c &lt; Fecha_Inicio__c
+)</errorConditionFormula>
+    <errorDisplayField>Fecha_Fin__c</errorDisplayField>
+    <errorMessage>La fecha fin debe ser igual o posterior a la fecha inicio.</errorMessage>
+</ValidationRule>

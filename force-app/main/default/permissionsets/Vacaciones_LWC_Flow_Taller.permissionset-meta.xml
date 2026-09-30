@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>Taller_LWC_Flow</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>Acceso mínimo al objeto y al Screen Flow del taller LWC + Flow.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Solicitud_Vacaciones__c.Comentario_Empleado__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Solicitud_Vacaciones__c.Dias_Solicitados__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Solicitud_Vacaciones__c.Empleado__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Solicitud_Vacaciones__c.Gerente__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <!-- Los cuatro campos universalmente requeridos ya son accesibles por el
+         objeto. Metadata API no permite desplegar fieldPermissions para ellos. -->
+    <flowAccesses>
+        <enabled>true</enabled>
+        <flow>Solicitar_Vacaciones_LWC_Flow</flow>
+    </flowAccesses>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Vacaciones LWC + Flow - Taller</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Solicitud_Vacaciones__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <tabSettings>
+        <tab>Solicitud_Vacaciones__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Taller_LWC_Flow</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RunFlow</name>
+    </userPermissions>
+</PermissionSet>

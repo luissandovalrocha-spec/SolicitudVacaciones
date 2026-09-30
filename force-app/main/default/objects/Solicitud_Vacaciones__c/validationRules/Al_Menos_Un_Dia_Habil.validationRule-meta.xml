@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Al_Menos_Un_Dia_Habil</fullName>
+    <active>true</active>
+    <description>Refuerza en servidor la validación del LWC: el rango debe incluir al menos un día de lunes a viernes.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Fecha_Inicio__c)),
+    NOT(ISBLANK(Fecha_Fin__c)),
+    Fecha_Fin__c &gt;= Fecha_Inicio__c,
+    Dias_Solicitados__c &lt;= 0
+)</errorConditionFormula>
+    <errorDisplayField>Fecha_Fin__c</errorDisplayField>
+    <errorMessage>El rango debe incluir al menos un día de lunes a viernes. No se descuentan días festivos en este ejercicio.</errorMessage>
+</ValidationRule>

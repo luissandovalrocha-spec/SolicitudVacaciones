@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Demo resuelta del taller de la comunidad Salesforce de San Luis Potosí: un LWC captura y valida; Screen Flow guarda y confirma.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Taller LWC + Flow</label>
+    <navType>Standard</navType>
+    <tabs>Taller_LWC_Flow</tabs>
+    <tabs>Solicitud_Vacaciones__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

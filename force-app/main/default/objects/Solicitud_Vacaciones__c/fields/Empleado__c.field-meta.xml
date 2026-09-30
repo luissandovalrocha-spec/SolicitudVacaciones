@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Empleado__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Usuario que crea la solicitud. Se asigna desde $User.Id en el Screen Flow.</description>
+    <label>Empleado</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Solicitudes de vacaciones como empleado</relationshipLabel>
+    <relationshipName>Solicitudes_Vacaciones_Empleado</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

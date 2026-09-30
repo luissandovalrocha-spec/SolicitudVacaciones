@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Taller: desplegar solución en wise-raccoon",
+      "type": "shell",
+      "command": "sf",
+      "args": ["project", "deploy", "start", "--manifest", "manifest/package.xml", "--target-org", "taller-lwc-flow-wise-raccoon", "--wait", "10"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Taller: abrir demo",
+      "type": "shell",
+      "command": "sf",
+      "args": ["org", "open", "--target-org", "taller-lwc-flow-wise-raccoon", "--path", "/flow/Solicitar_Vacaciones_LWC_Flow"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Taller: abrir Flow Builder",
+      "type": "shell",
+      "command": "sf",
+      "args": ["org", "open", "--target-org", "taller-lwc-flow-wise-raccoon", "--source-file", "force-app/main/default/flows/Solicitar_Vacaciones_LWC_Flow.flow-meta.xml"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Taller: ver solicitudes guardadas",
+      "type": "shell",
+      "command": "sf",
+      "args": ["data", "query", "--target-org", "taller-lwc-flow-wise-raccoon", "--query", "SELECT Id, Name, Tipo__c, Fecha_Inicio__c, Fecha_Fin__c, Dias_Solicitados__c, Estado__c FROM Solicitud_Vacaciones__c ORDER BY CreatedDate DESC LIMIT 10"],
+      "problemMatcher": []
+    }
+  ]
+}

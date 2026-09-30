@@ -1,0 +1,113 @@
+<template>
+    <section class="workshop-shell" aria-labelledby="vacation-heading">
+        <header class="hero">
+            <div class="hero__icon" aria-hidden="true">
+                <lightning-icon
+                    icon-name="utility:event"
+                    size="medium"
+                    alternative-text="">
+                </lightning-icon>
+            </div>
+            <div>
+                <p class="hero__eyebrow">MI TIEMPO</p>
+                <h1 id="vacation-heading" class="hero__title">{headline}</h1>
+                <p class="hero__subtitle">
+                    Elige tus fechas y revisa el resumen antes de enviar.
+                </p>
+            </div>
+        </header>
+
+        <div class="form-body">
+            <div class="field-block">
+                <lightning-combobox
+                    data-input
+                    data-field="requestType"
+                    name="requestType"
+                    label="Tipo de ausencia"
+                    value={requestType}
+                    options={typeOptions}
+                    onchange={handleFieldChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <div class="date-grid">
+                <lightning-input
+                    data-input
+                    data-field="startDate"
+                    name="startDate"
+                    type="date"
+                    label="Primer día"
+                    value={startDate}
+                    min={today}
+                    onchange={handleFieldChange}
+                    required>
+                </lightning-input>
+
+                <lightning-input
+                    data-input
+                    data-field="endDate"
+                    name="endDate"
+                    type="date"
+                    label="Último día"
+                    value={endDate}
+                    min={today}
+                    onchange={handleFieldChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <div class="field-block">
+                <lightning-textarea
+                    data-input
+                    data-field="comments"
+                    name="comments"
+                    label="Comentario para tu gerente"
+                    field-level-help="No incluyas información sensible. Este campo es opcional."
+                    value={comments}
+                    maxlength="1000"
+                    onchange={handleFieldChange}>
+                </lightning-textarea>
+            </div>
+
+            <div class={summaryClass} aria-live="polite">
+                <div class="summary__number">{daysRequested}</div>
+                <div class="summary__copy">
+                    <strong>días hábiles estimados</strong>
+                    <span>{summaryMessage}</span>
+                </div>
+                <lightning-icon
+                    class="summary__icon"
+                    icon-name={summaryIcon}
+                    size="small"
+                    alternative-text={summaryAlternativeText}>
+                </lightning-icon>
+            </div>
+
+            <template lwc:if={hasRenderedError}>
+                <div class="error-panel" role="alert">
+                    <lightning-icon
+                        icon-name="utility:error"
+                        size="x-small"
+                        variant="inverse"
+                        alternative-text="Error">
+                    </lightning-icon>
+                    <lightning-formatted-rich-text value={renderedErrorMessage}>
+                    </lightning-formatted-rich-text>
+                </div>
+            </template>
+
+            <footer class="teaching-note">
+                <lightning-icon
+                    icon-name="utility:info"
+                    size="xx-small"
+                    alternative-text="Información">
+                </lightning-icon>
+                <span>
+                    El máximo de {effectiveMaxDays} días hábiles es una regla del
+                    ejercicio, no una política laboral. No se descuentan días festivos.
+                </span>
+            </footer>
+        </div>
+    </section>
+</template>

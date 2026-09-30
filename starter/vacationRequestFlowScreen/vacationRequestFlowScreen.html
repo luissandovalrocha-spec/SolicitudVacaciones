@@ -1,0 +1,56 @@
+<template>
+    <section class="workshop-shell">
+        <header class="hero">
+            <p class="eyebrow">MI TIEMPO</p>
+            <h1>{headline}</h1>
+            <p>LWC captura y valida; Screen Flow crea el registro.</p>
+        </header>
+
+        <div class="form-body">
+            <lightning-combobox
+                name="requestType"
+                label="Tipo de ausencia"
+                value={requestType}
+                options={typeOptions}
+                onchange={handleFieldChange}
+                required>
+            </lightning-combobox>
+
+            <div class="date-grid">
+                <lightning-input
+                    name="startDate"
+                    type="date"
+                    label="Primer día"
+                    value={startDate}
+                    min={today}
+                    onchange={handleFieldChange}
+                    required>
+                </lightning-input>
+
+                <lightning-input
+                    name="endDate"
+                    type="date"
+                    label="Último día"
+                    value={endDate}
+                    min={today}
+                    onchange={handleFieldChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <lightning-textarea
+                name="comments"
+                label="Comentario para tu gerente"
+                value={comments}
+                maxlength="1000"
+                onchange={handleFieldChange}>
+            </lightning-textarea>
+
+            <!-- TODO 4: convertir este resumen en un estado reactivo. -->
+            <div class="summary" aria-live="polite">
+                <strong>{daysRequested} días hábiles estimados</strong>
+                <span>Máximo didáctico: {maxDays}</span>
+            </div>
+        </div>
+    </section>
+</template>

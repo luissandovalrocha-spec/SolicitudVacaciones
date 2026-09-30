@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Solicitud de vacaciones - Starter</masterLabel>
+    <description>Starter con TODOs para el taller LWC + Screen Flow.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="headline" type="String" label="Título" default="Planea tu descanso" role="inputOnly" />
+            <property name="maxDays" type="Integer" label="Máximo didáctico" default="15" role="inputOnly" />
+            <property name="requestType" type="String" label="Tipo de ausencia" default="Vacaciones" />
+            <property name="startDate" type="Date" label="Fecha inicio" />
+            <property name="endDate" type="Date" label="Fecha fin" />
+            <property name="comments" type="String" label="Comentario del empleado" />
+            <property name="daysRequested" type="Integer" label="Días hábiles solicitados" role="outputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Solicitud de vacaciones - Taller</masterLabel>
+    <description>Captura y valida una solicitud para que un Screen Flow cree el registro.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+                name="headline"
+                type="String"
+                label="Título"
+                description="Título principal del componente."
+                default="Planea tu descanso"
+                role="inputOnly" />
+            <property
+                name="maxDays"
+                type="Integer"
+                label="Máximo de días para el ejercicio"
+                description="Regla didáctica; no representa una política laboral."
+                default="15"
+                role="inputOnly" />
+            <property
+                name="requestType"
+                type="String"
+                label="Tipo de ausencia"
+                description="Valor que Flow asignará a Tipo__c."
+                default="Vacaciones" />
+            <property
+                name="startDate"
+                type="Date"
+                label="Fecha inicio"
+                description="Valor que Flow asignará a Fecha_Inicio__c." />
+            <property
+                name="endDate"
+                type="Date"
+                label="Fecha fin"
+                description="Valor que Flow asignará a Fecha_Fin__c." />
+            <property
+                name="comments"
+                type="String"
+                label="Comentario del empleado"
+                description="Valor que Flow asignará a Comentario_Empleado__c." />
+            <property
+                name="daysRequested"
+                type="Integer"
+                label="Días hábiles solicitados"
+                description="Salida calculada para resumen y reactividad en Flow."
+                role="outputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

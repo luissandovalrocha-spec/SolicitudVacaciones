@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipo__c</fullName>
+    <description>Tipo de ausencia seleccionado en el componente LWC.</description>
+    <label>Tipo de ausencia</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vacaciones</fullName>
+                <default>true</default>
+                <label>Vacaciones</label>
+            </value>
+            <value>
+                <fullName>Día personal</fullName>
+                <default>false</default>
+                <label>Día personal</label>
+            </value>
+            <value>
+                <fullName>Asunto familiar</fullName>
+                <default>false</default>
+                <label>Asunto familiar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

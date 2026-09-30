@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximo_15_Dias_Didactico</fullName>
+    <active>true</active>
+    <description>Regla exclusivamente didáctica del taller; no representa una política laboral.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Fecha_Inicio__c)),
+    NOT(ISBLANK(Fecha_Fin__c)),
+    Fecha_Fin__c &gt;= Fecha_Inicio__c,
+    Dias_Solicitados__c &gt; 15
+)</errorConditionFormula>
+    <errorMessage>Para este ejercicio, una solicitud puede incluir como máximo 15 días hábiles. Esta no es una regla laboral.</errorMessage>
+</ValidationRule>

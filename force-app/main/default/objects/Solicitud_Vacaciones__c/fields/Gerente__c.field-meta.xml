@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gerente__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Gerente que puede recibir la aprobación y notificación del taller anterior.</description>
+    <label>Gerente</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Solicitudes de vacaciones como gerente</relationshipLabel>
+    <relationshipName>Solicitudes_Vacaciones_Gerente</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

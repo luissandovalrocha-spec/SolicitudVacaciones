@@ -1,0 +1,56 @@
+:host {
+    display: block;
+}
+
+.workshop-shell {
+    overflow: hidden;
+    border: 1px solid #d8dde6;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 0.75rem 2rem rgb(1 68 134 / 12%);
+}
+
+.hero {
+    padding: 1.5rem;
+    color: white;
+    background: linear-gradient(135deg, #032d60, #0176d3);
+}
+
+.hero h1 {
+    margin: 0.15rem 0;
+    font-size: 1.65rem;
+    font-weight: 700;
+}
+
+.eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.form-body {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.summary {
+    display: grid;
+    gap: 0.2rem;
+    padding: 1rem;
+    border: 1px solid #a8d7f4;
+    border-radius: 0.75rem;
+    background: #eef8ff;
+}
+
+@media (max-width: 40rem) {
+    .date-grid {
+        grid-template-columns: 1fr;
+    }
+}
